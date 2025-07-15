@@ -52,7 +52,7 @@ datasets = [
     {
         "name": "CodeLlama_RAG",
         "compiled_csv": "codellama_rag_contracts/compiled_codellama_rag_contracts.csv",
-        "metadata_csv": "../scripts/codellama/codellama_with_improved_comments.csv",
+        "metadata_csv": "../scripts/codellama/codellama_with_rag.csv",
         "output_json": "comparison_codellama_rag.json"
     },
     {
@@ -64,7 +64,7 @@ datasets = [
     {
         "name": "DeepSeek_RAG",
         "compiled_csv": "deepseek_coder_rag_contracts/compiled_deepseek_coder_rag_contracts.csv",
-        "metadata_csv": "../scripts/deepseek/deepseek_with_improved_comments.csv",
+        "metadata_csv": "../scripts/deepseek/deepseek_with_rag.csv",
         "output_json": "comparison_deepseek_rag.json"
     },
     {
@@ -76,7 +76,7 @@ datasets = [
     {
         "name": "ChatGPT_RAG",
         "compiled_csv": "chatGPT_rag_contracts/compiled_chatGPT_rag_contracts.csv",
-        "metadata_csv": "../scripts/ChatGPT/chatGPT_with_improved_comments.csv",
+        "metadata_csv": "../scripts/ChatGPT/chatGPT_with_rag.csv",
         "output_json": "comparison_chatgpt_rag.json"
     },
     {
@@ -88,7 +88,7 @@ datasets = [
     {
         "name": "Gemini_RAG",
         "compiled_csv": "gemini_rag_contracts/compiled_gemini_rag_contracts.csv",
-        "metadata_csv": "../scripts/Gemini/gemini_with_improved_comments.csv",
+        "metadata_csv": "../scripts/Gemini/gemini_with_rag.csv",
         "output_json": "comparison_gemini_rag.json"
     },
 ]

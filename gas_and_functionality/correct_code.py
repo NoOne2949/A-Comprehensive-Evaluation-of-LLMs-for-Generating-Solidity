@@ -186,22 +186,22 @@ def remove_abstract_and_wrong_imports(content):
 
 # Load CSV and apply transformation
 codellama_path = '../scripts/codellama/codellama.csv'
-codellama_improved_comments_path = '../scripts/codellama/codellama_with_improved_comments.csv'
+codellama_improved_comments_path = '../scripts/codellama/codellama_with_rag.csv'
 codellama = pd.read_csv(codellama_path)
 codellama_improved_comments = pd.read_csv(codellama_improved_comments_path)
 
 deepseek_path = '../scripts/deepseek/deepseek.csv'
-deepseek_improved_comments_path = '../scripts/deepseek/deepseek_with_improved_comments.csv'
+deepseek_improved_comments_path = '../scripts/deepseek/deepseek_with_rag.csv'
 deepseek = pd.read_csv(deepseek_path)
 deepseek_improved_comments = pd.read_csv(deepseek_improved_comments_path)
 
 gemini_path = '../scripts/Gemini/gemini.csv'
-gemini_improved_comments_path = '../scripts/Gemini/gemini_with_improved_comments.csv'
+gemini_improved_comments_path = '../scripts/Gemini/gemini_with_rag.csv'
 gemini = pd.read_csv(gemini_path)
 gemini_improved_comments = pd.read_csv(gemini_improved_comments_path)
 
 gpt_path = '../scripts/ChatGPT/chatGPT.csv'
-gpt_improved_comments_path = '../scripts/ChatGPT/chatGPT_with_improved_comments.csv'
+gpt_improved_comments_path = '../scripts/ChatGPT/chatGPT_with_rag.csv'
 gpt = pd.read_csv(gpt_path)
 gpt_improved_comments = pd.read_csv(gpt_improved_comments_path)
 

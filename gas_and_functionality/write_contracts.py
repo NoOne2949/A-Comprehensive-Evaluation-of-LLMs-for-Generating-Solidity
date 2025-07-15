@@ -12,10 +12,10 @@ gemini_path = os.path.join(script_dir, "..", "scripts", "Gemini", "gemini.csv")
 codellama_path = os.path.join(script_dir, "..", "scripts", "codellama", "codellama.csv")
 deepseek_path = os.path.join(script_dir, "..", "scripts", "deepseek", "deepseek.csv")
 
-chatGPT_rag_path = os.path.join(script_dir, "..", "scripts", "ChatGPT", "chatGPT_with_improved_comments.csv")
-gemini_rag_path = os.path.join(script_dir, "..", "scripts", "Gemini", "gemini_with_improved_comments.csv")
-codellama_rag_path = os.path.join(script_dir, "..", "scripts", "codellama", "codellama_with_improved_comments.csv")
-deepseek_rag_path = os.path.join(script_dir, "..", "scripts", "deepseek", "deepseek_with_improved_comments.csv")
+chatGPT_rag_path = os.path.join(script_dir, "..", "scripts", "ChatGPT", "chatGPT_with_rag.csv")
+gemini_rag_path = os.path.join(script_dir, "..", "scripts", "Gemini", "gemini_with_rag.csv")
+codellama_rag_path = os.path.join(script_dir, "..", "scripts", "codellama", "codellama_with_rag.csv")
+deepseek_rag_path = os.path.join(script_dir, "..", "scripts", "deepseek", "deepseek_with_rag.csv")
 
 # Output directories
 output_dirs = {
