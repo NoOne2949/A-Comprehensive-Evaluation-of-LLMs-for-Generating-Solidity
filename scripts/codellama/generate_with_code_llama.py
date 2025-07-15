@@ -92,21 +92,21 @@ def call_api(url, model, code_summary, temperature, is_rag, stream=False, retrie
         print(f"Error: {response.status_code}, {response.text}")
 
 
-#df=pd.read_csv("../../data/sample_of_interest.csv")
+df=pd.read_csv("../../data/sample_of_interest.csv")
 
 df1=pd.read_csv("codellama_with_rag.csv")
 
-# for index, row in df.iterrows():
-#     summary=row["Comment"]
-#     start_time=time.time()
-#
-#     result=call_api("http://localhost:11434/api/generate", "codellama:13b",
-#              summary, 0.4, False, False)
-#     end_time = time.time() - start_time
-#
-#     df.at[index, "CodeLLamaGenerated"]=result
-#     df.at[index, "Time"]=end_time
-# df.to_csv("codellama.csv", index=False)
+for index, row in df.iterrows():
+    summary=row["Comment"]
+    start_time=time.time()
+
+    result=call_api("http://localhost:11434/api/generate", "codellama:13b",
+             summary, 0.4, False, False)
+    end_time = time.time() - start_time
+
+    df.at[index, "CodeLLamaGenerated"]=result
+    df.at[index, "Time"]=end_time
+df.to_csv("codellama.csv", index=False)
 
 for index, row in df1.iterrows():
 
