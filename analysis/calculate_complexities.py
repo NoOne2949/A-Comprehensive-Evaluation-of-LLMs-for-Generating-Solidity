@@ -20,22 +20,22 @@ from scripts.metrics import cyclomatic_complexity, extract_function_of_interest_
 import pandas as pd
 
 codellama_path = '../scripts/codellama/codellama.csv'
-codellama_improved_comments_path = '../scripts/codellama/codellama_with_improved_comments.csv'
+codellama_improved_comments_path = '../scripts/codellama/codellama_with_rag.csv'
 codellama = pd.read_csv(codellama_path)
 codellama_improved_comments = pd.read_csv(codellama_improved_comments_path)
 
 deepseek_path = '../scripts/deepseek/deepseek.csv'
-deepseek_improved_comments_path = '../scripts/deepseek/deepseek_with_improved_comments.csv'
+deepseek_improved_comments_path = '../scripts/deepseek/deepseek_with_rag.csv'
 deepseek = pd.read_csv(deepseek_path)
 deepseek_improved_comments = pd.read_csv(deepseek_improved_comments_path)
 
 gemini_path = '../scripts/Gemini/gemini.csv'
-gemini_improved_comments_path = '../scripts/Gemini/gemini_with_improved_comments.csv'
+gemini_improved_comments_path = '../scripts/Gemini/gemini_with_rag.csv'
 gemini = pd.read_csv(gemini_path)
 gemini_improved_comments = pd.read_csv(gemini_improved_comments_path)
 
 gpt_path = '../scripts/ChatGPT/chatGPT.csv'
-gpt_improved_comments_path = '../scripts/ChatGPT/chatGPT_with_improved_comments.csv'
+gpt_improved_comments_path = '../scripts/ChatGPT/chatGPT_with_rag.csv'
 gpt = pd.read_csv(gpt_path)
 gpt_improved_comments = pd.read_csv(gpt_improved_comments_path)
 
@@ -150,10 +150,10 @@ def complexity_gt():
         cyclomatic_complex = cyclomatic_complexity.calculate_cyclomatic_complexity(function)
         gt.at[index, 'CyclomaticComplexity'] = cyclomatic_complex
 
-    gt.to_csv("../data/sample_of_interest2.csv", index=False)
+    gt.to_csv("../data/sample_of_interest.csv", index=False)
 
 
-gt = pd.read_csv("../data/sample_of_interest2.csv")
+gt = pd.read_csv("../data/sample_of_interest.csv")
 
 complexity_gt()
 complexity_codellama()

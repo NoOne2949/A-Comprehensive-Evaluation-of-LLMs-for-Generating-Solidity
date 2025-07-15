@@ -48,7 +48,7 @@ def call_api(url, model, function, temperature, stream=False):
         print(f"Error: {response.status_code}, {response.text}")
 
 
-df = pd.read_csv("../data/sample_of_interest2.csv")
+df = pd.read_csv("../data/sample_of_interest.csv")
 for index, row in df.iterrows():
     func = row["FormattedCode"]
 
@@ -56,4 +56,4 @@ for index, row in df.iterrows():
                       func, 0.4, False)
     df.at[index, "Contract"] = result
 
-df.to_csv("sample_of_interest2.csv")
+df.to_csv("sample_of_interest.csv")

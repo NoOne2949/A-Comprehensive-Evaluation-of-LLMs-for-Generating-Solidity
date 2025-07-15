@@ -6,13 +6,13 @@ import numpy as np
 # Paths to all datasets
 datasets = {
     "codellama": '../scripts/codellama/codellama.csv',
-    "codellama_improved": '../scripts/codellama/codellama_with_improved_comments.csv',
+    "codellama_improved": '../scripts/codellama/codellama_with_rag.csv',
     "deepseek": '../scripts/deepseek/deepseek.csv',
-    "deepseek_improved": '../scripts/deepseek/deepseek_with_improved_comments.csv',
+    "deepseek_improved": '../scripts/deepseek/deepseek_with_rag.csv',
     "gemini": '../scripts/Gemini/gemini.csv',
-    "gemini_improved": '../scripts/Gemini/gemini_with_improved_comments.csv',
+    "gemini_improved": '../scripts/Gemini/gemini_with_rag.csv',
     "gpt": '../scripts/ChatGPT/chatGPT.csv',
-    "gpt_improved": '../scripts/ChatGPT/chatGPT_with_improved_comments.csv'
+    "gpt_improved": '../scripts/ChatGPT/chatGPT_with_rag.csv'
 }
 
 columns_of_interest = ['SemanticSimilarity', 'TED', 'BLEU']
@@ -81,7 +81,7 @@ def print_cyclomatic_complexity(cyclomatic_complexity, name):
     print("--------------------------------------------------")
 
 # Load ground truth once
-gt = pd.read_csv("../data/sample_of_interest2.csv")
+gt = pd.read_csv("../data/sample_of_interest.csv")
 gt["ID"] = gt["ID"].astype(str)
 gt["target_function"] = gt["target_function"].astype(str)
 gt["IsCorrect"] = gt["IsCorrect"].astype(bool)

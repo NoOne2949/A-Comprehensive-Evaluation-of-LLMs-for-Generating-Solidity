@@ -26,7 +26,7 @@ def calculate_gt_loc():
         # loc = compute_loc(function)
         gt.at[index, 'loc'] = line_count
 
-    gt.to_csv('../data/sample_of_interest2.csv', index=False)
+    gt.to_csv('../data/sample_of_interest.csv', index=False)
 
 
 def calculate_codellama_loc():
@@ -115,32 +115,32 @@ def calculate_chatGPT_loc():
 
     gpt_improved_comments.to_csv(gpt_improved_comments_path, index=False)
 
-gt = pd.read_csv('../data/sample_of_interest2.csv')
+gt = pd.read_csv('../data/sample_of_interest.csv')
 calculate_gt_loc()
 
 codellama_path = '../scripts/codellama/codellama.csv'
-codellama_improved_comments_path = '../scripts/codellama/codellama_with_improved_comments.csv'
+codellama_improved_comments_path = '../scripts/codellama/codellama_with_rag.csv'
 codellama = pd.read_csv(codellama_path)
 codellama_improved_comments = pd.read_csv(codellama_improved_comments_path)
 
 calculate_codellama_loc()
 
 deepseek_path = '../scripts/deepseek/deepseek.csv'
-deepseek_improved_comments_path = '../scripts/deepseek/deepseek_with_improved_comments.csv'
+deepseek_improved_comments_path = '../scripts/deepseek/deepseek_with_rag.csv'
 deepseek = pd.read_csv(deepseek_path)
 deepseek_improved_comments = pd.read_csv(deepseek_improved_comments_path)
 
 calculate_deepseek_loc()
 
 gemini_path = '../scripts/Gemini/gemini.csv'
-gemini_improved_comments_path = '../scripts/Gemini/gemini_with_improved_comments.csv'
+gemini_improved_comments_path = '../scripts/Gemini/gemini_with_rag.csv'
 gemini = pd.read_csv(gemini_path)
 gemini_improved_comments = pd.read_csv(gemini_improved_comments_path)
 
 calculate_gemini_loc()
 
 gpt_path = '../scripts/ChatGPT/chatGPT.csv'
-gpt_improved_comments_path = '../scripts/ChatGPT/chatGPT_with_improved_comments.csv'
+gpt_improved_comments_path = '../scripts/ChatGPT/chatGPT_with_rag.csv'
 gpt = pd.read_csv(gpt_path)
 gpt_improved_comments = pd.read_csv(gpt_improved_comments_path)
 
