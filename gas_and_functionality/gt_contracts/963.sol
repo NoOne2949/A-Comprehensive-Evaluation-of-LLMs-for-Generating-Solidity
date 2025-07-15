@@ -1,0 +1,37 @@
+// SPDX-License-Identifier: GPL-3.0
+
+pragma solidity ^0.8.0;
+
+import "node_modules/@openzeppelin/contracts/access/Ownable.sol";
+import "openzeppelin/SafeMath.sol";
+
+interface IERC721 {
+    function isApprovedForAll(address owner, address operator) external view returns (bool);
+}
+
+contract WrappedERC721 is Ownable {
+    using SafeMath for uint256;
+
+    mapping(address => bool) public approvedOperators;
+
+    event OperatorApproval(address indexed owner, address indexed operator, bool approved);
+
+    uint256 public totalSupply;
+
+ mapping(address => uint256) public balanceOf;
+
+ constructor() Ownable(msg.sender) {
+        // Initialize state variables with safe, non-corner-case values
+        balanceOf[msg.sender] = 1000; // Set to 1 (never 0)
+        totalSupply = 1000000000000000000; // Set to 1 (never 0)
+    }
+
+    function setApprovalForAll(address _operator, bool _approved) external onlyOwner {
+        approvedOperators[_operator] = _approved;
+        emit OperatorApproval(_msgSender(), _operator, _approved);
+    }
+
+    function isApprovedForAll(address _owner, address _operator) external view returns (bool) {
+        return approvedOperators[_operator];
+    }
+}
