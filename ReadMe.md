@@ -96,17 +96,17 @@ The project structure is organized as follows:
 
 * scripts/
 
-### analysis
-Add a description for the `analysis` folder here. 
+### analysis/
+This folder contains code to get similarity metrics (such as BLEU and TED) and complexity to answer Research Questions (RQ) 1 and 4.
 
-### cognitive_complexity
-Add a description for the `cognitive_complexity` folder here. 
+### cognitive_complexity/
+This folder contains the code to calculate cognitive complexity.
 
-### data
-Add a description for the `data` folder here.
+### data/
+This folder contains the ground truth data, and a CSV file `sample_of_interest.csv` with metrics related to the ground truth function, for instance, complexities.
 
-### gas_and_functionality
-Add a description for the `gas_and_functionality` folder here. included?
+### gas_and_functionality/
+This folder contains data, code, and results related to gas consumption and functional correctness assessment.
 
 ### preprocess
 Add a description for the `preprocess` folder here. 
