@@ -106,7 +106,7 @@ This folder contains the code to calculate cognitive complexity.
 This folder contains the ground truth data, and a CSV file `sample_of_interest.csv` with metrics related to the ground truth function, for instance, complexities.
 
 ### gas_and_functionality/
-This folder contains data, code, and results related to gas consumption and functional correctness assessment.
+This folder contains data, code, and results related to gas consumption and functional correctness assessment. It also includes the `gr_contracts` subfolder, which contains contracts from the ground truth that can be compiled. To insert data into the model folder, use the `write_contracts.py` script.
 
 ### preprocess
 Add a description for the `preprocess` folder here. 
