@@ -34,49 +34,10 @@ Follow these steps to set up your development environment.
     pip install -r requirements.txt
     ```
 
-## 📁 Folder Structure
-
-The project structure is organized as follows:
-
-You got it! Here's the English README, formatted in Markdown and ready for you to paste:
-
-Markdown
-
 # A Comprehensive Evaluation of LLMs for Generating Solidity
 
 This repository contains the code and data for a comprehensive evaluation of Large Language Models (LLMs) for Solidity code generation.
 
-## ⚙️ Setup
-
-Follow these steps to set up your development environment.
-
-1.  **Create a virtual environment**:
-
-    ```bash
-    python -m venv venv
-    ```
-
-2.  **Activate the virtual environment**:
-
-    Windows:
-
-    ```bash
-    venv\Scripts\activate
-    ```
-
-    macOS/Linux:
-
-    ```bash
-    source venv/bin/activate
-    ```
-
-3.  **Install dependencies**:
-
-    Make sure your virtual environment is active, then run:
-
-    ```bash
-    pip install -r requirements.txt
-    ```
 
 ## 📁 Folder Structure
 
@@ -112,7 +73,7 @@ This folder contains data, code, and results related to gas consumption and func
 This folder contains scripts used in the pre-processing phase and to extract a random sample.
 
 ### rag
-This folder contains the code used to perform retrival-augmented generation.
+This folder contains the code used to perform retrieval-augmented generation.
 
 ### scripts
 
