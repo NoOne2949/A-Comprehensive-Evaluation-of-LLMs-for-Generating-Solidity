@@ -115,4 +115,10 @@ This folder contains scripts used in the pre-processing phase and to extract a r
 This folder contains the code used to perform retrival-augmented generation.
 
 ### scripts
-Add a description for the `scripts/` folder here.
+
+* ChatGPT: This folder contains code to generate samples with ChatGPT and data related to the generated code with and without rag.
+* Gemini: This folder contains code to generate samples with Gemini and data related to the generated code with and without rag.
+* codellama: This folder contains code to generate samples with codellama and data related to the generated code with and without rag.
+* constructor_injection: This folder contains code to inject constructors with qwen-coder-v2
+* deepseek: This folder contains code to generate samples with deepseek-coder-v2 and data related to the generated code with and without rag.
+* metrics: This folder contains code to obtain base metrics, for instance, semantic similarity, bleu, TED. Use the included requirements.txt to obtain dependencies for SmarEmbed. 
