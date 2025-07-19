@@ -3,14 +3,14 @@ import os
 
 # List of JSON paths (add or remove as needed)
 json_files = [
-    "comparison_chatgpt.json",
-    "comparison_codellama_rag.json",
-    "comparison_gemini_rag.json",
-    "comparison_gemini.json",
-    "comparison_deepseek.json",
-    "comparison_deepseek_rag.json",
-    "comparison_codellama.json",
-    "comparison_chatgpt_rag.json"
+    "correctness_summaries/comparison_chatgpt.json",
+    "correctness_summaries/comparison_codellama_rag.json",
+    "correctness_summaries/comparison_gemini_rag.json",
+    "correctness_summaries/comparison_gemini.json",
+    "correctness_summaries/comparison_deepseek.json",
+    "correctness_summaries/comparison_deepseek_rag.json",
+    "correctness_summaries/comparison_codellama.json",
+    "correctness_summaries/comparison_chatgpt_rag.json"
 ]
 
 # Ensure the output folder exists
@@ -30,6 +30,7 @@ for json_path in json_files:
     total_functions = 0
     total_correct_outputs = 0
     total_incorrect_outputs = 0
+    perfectly_correct_instances = 0
     contracts_summary = []
 
     for contract_id, results in data.items():
@@ -43,6 +44,9 @@ for json_path in json_files:
 
         correctness_rate = ident / total if total > 0 else 0
 
+        if ident == total:
+            perfectly_correct_instances += 1
+
         contracts_summary.append({
             "contract_id": contract_id,
             "identical_outputs": ident,
@@ -54,21 +58,16 @@ for json_path in json_files:
     # Compute overall metrics
     total_samples = total_correct_outputs + total_incorrect_outputs
     overall_accuracy = total_correct_outputs / total_samples if total_samples > 0 else 0
+    percent_perfectly_correct = perfectly_correct_instances / total_functions if total_functions > 0 else 0
 
     # Print detailed results
-    #print("\n📊 Correctness per contract:")
-    # for entry in contracts_summary:
-    #     print(f"- Contract ID {entry['contract_id']}:")
-    #     print(f"   Correct outputs: {entry['identical_outputs']}")
-    #     print(f"   Incorrect outputs: {entry['different_outputs']}")
-    #     print(f"   Accuracy: {entry['correctness_rate']*100:.2f}%")
-
     print("\n✅ Overall Correctness Summary:")
     print(f"   Total contracts evaluated: {total_functions}")
     print(f"   Total samples: {total_samples}")
     print(f"   Total correct outputs: {total_correct_outputs}")
     print(f"   Total incorrect outputs: {total_incorrect_outputs}")
     print(f"   Overall accuracy: {overall_accuracy*100:.2f}%")
+    print(f"   Contracts with 100% accuracy: {perfectly_correct_instances} ({percent_perfectly_correct*100:.2f}%)")
 
     # Prepare the summary dictionary
     summary_output = {
@@ -77,6 +76,8 @@ for json_path in json_files:
         "total_correct_outputs": total_correct_outputs,
         "total_incorrect_outputs": total_incorrect_outputs,
         "overall_accuracy": overall_accuracy,
+        "percent_perfectly_correct_contracts": percent_perfectly_correct,
+        "perfectly_correct_contracts": perfectly_correct_instances,
         "per_contract": contracts_summary
     }
 
